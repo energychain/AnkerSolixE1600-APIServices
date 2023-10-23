@@ -1,0 +1,36 @@
+{
+  "name": "ankersolixe1600-apiservices",
+  "version": "1.0.0",
+  "description": "API Services (REST/MQTT) for the Anker Solix Solarbank E1600 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energychain/AnkerSolixE1600-APIServices.git"
+  },
+  "keywords": [
+    "anker",
+    "solix",
+    "e1600",
+    "api",
+    "rest",
+    "mqtt"
+  ],
+  "author": "STROMDAO GmbH <dev@stromdao.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/energychain/AnkerSolixE1600-APIServices/issues"
+  },
+  "homepage": "https://github.com/energychain/AnkerSolixE1600-APIServices#readme",
+  "dependencies": {
+    "ankersolixe1600": "^1.0.4",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mqtt": "^5.1.3",
+    "node-fetch": "^2.7.0"
+  }
+}
