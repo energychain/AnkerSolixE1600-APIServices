@@ -1,11 +1,15 @@
 # AnkerSolixE1600-APIServices
 API Services for the Anker Solix Solarbank E1600 
 
+## Features
+- Provide REST API to manage load and unload (charge/discharge) of Solarbank
+- Publish status to MQTT service
+- Allow setting of Energy discharge via MQTT topic
+- Lightweight Webinterface (not all features)
 
 ## Usage
 Copy `sample.env` to `.env`
 Edit `.env` as required
-
 
 ## Funding
 This development is funded via our customers at https://corrently.energy/ 

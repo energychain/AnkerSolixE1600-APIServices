@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/energychain/AnkerSolixE1600-APIServices#readme",
   "dependencies": {
-    "ankersolixe1600": "^1.0.4",
+    "ankersolixe1600": "^1.0.5",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

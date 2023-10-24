@@ -1,0 +1,166 @@
+openapi: 3.0.0
+info:
+  title: AnkerSolixE1600-APIServices
+  version: '1.0.5'
+  description: |
+    API Services for the Anker Solix Solarbank E1600 for integration with Smart-Home or Energy-Management-Systems.
+
+    GitHub: [AnkerSolixE1600-APIServices](https://github.com/energychain/AnkerSolixE1600-APIServices)
+
+    Development funded by buyers of [Corrently Energy](https://corrently.energy/).
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+
+servers:
+      - url: http://localhost:3000
+        description: Local runtime/server 
+
+paths:
+  /setEnergy/{site_id}:
+    post:
+      summary: Sets the energy for a specific site.
+      parameters:
+        - in: path
+          name: site_id
+          required: true
+          description: The ID of the site.
+          schema:
+            type: integer
+        - in: query
+          name: site_id
+          schema:
+            type: integer
+          description: The ID of the site.
+        - in: query
+          name: power
+          schema:
+            type: integer
+          description: The power value.
+        - in: body
+          name: body
+          required: false
+          schema:
+            type: object
+            properties:
+              power:
+                type: integer
+      responses:
+        '200':
+          description: Success response
+        '500':
+          description: Internal Server Error
+  /schedule/{site_id}:
+    get:
+      summary: Retrieves the schedule for a specific site.
+      parameters:
+        - in: path
+          name: site_id
+          required: true
+          description: The ID of the site.
+          schema:
+            type: integer
+        - in: query
+          name: site_id
+          schema:
+            type: integer
+          description: The ID of the site.
+      responses:
+        '200':
+          description: Success response
+        '500':
+          description: Internal Server Error
+    post:
+      summary: Sets the schedule for a specific site.
+      parameters:
+        - in: path
+          name: site_id
+          required: true
+          description: The ID of the site.
+          schema:
+            type: integer
+        - in: query
+          name: site_id
+          schema:
+            type: integer
+          description: The ID of the site.
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              ranges:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    start_time:
+                      type: string
+                    end_time:
+                      type: string
+                    turn_on:
+                      type: boolean
+                    appliance_loads:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                          power:
+                            type: integer
+                          number:
+                            type: integer
+              min_load:
+                type: integer
+              max_load:
+                type: integer
+              step:
+                type: integer
+      responses:
+        '200':
+          description: Success response
+        '500':
+          description: Internal Server Error
+  /getHomepage:
+    get:
+      summary: Retrieves the site homepage.
+      responses:
+        '200':
+          description: Success response
+        '500':
+          description: Internal Server Error
+  /restart:
+    all:
+      summary: Restarts the service.
+      responses:
+        '503':
+          description: Service Restarting
+  /login:
+    post:
+      summary: Authenticates the user with Anker Cloud Credentials and retrieves the site homepage.
+      requestBody:
+        description: User credentials
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ANKER_USERNAME:
+                  type: string
+                ANKER_PASSWORD:
+                  type: string
+                ANKER_COUNTRY:
+                  type: string
+      responses:
+        '200':
+          description: Success response
+        '500':
+          description: Internal Server Error
+

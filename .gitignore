@@ -131,3 +131,4 @@ dist
 
 # Session Storage for Anker Account
 session.json
+*.bsdesign
