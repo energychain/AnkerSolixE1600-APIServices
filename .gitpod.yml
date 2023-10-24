@@ -15,5 +15,5 @@ ports:
       onOpen: open-preview
       name: WebUI
       description: Lightweight WebInterface
-      visibility: private
+      visibility: public
       protocol: http
