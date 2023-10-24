@@ -5,7 +5,7 @@ tasks:
     - name: Setup, Install & Build
       before: yarn global add express
       init: yarn install
-      command: yarn build
+      command: node index.js
       env: 
         HTTP_PORT: 3000
 
@@ -13,7 +13,7 @@ tasks:
 ports:
     - port: 3000
       onOpen: open-preview
-      name: Website
-      description: Website Preview
+      name: WebUI
+      description: Lightweight WebInterface
       visibility: private
-      protocol: https
+      protocol: http
