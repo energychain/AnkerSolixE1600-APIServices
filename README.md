@@ -1,6 +1,8 @@
 # AnkerSolixE1600-APIServices
 API Services for the Anker Solix Solarbank E1600 
 
+[Test on GitPod](https://gitpod.io/#https://github.com/energychain/AnkerSolixE1600-APIServices)
+
 ## Features
 - Provide REST API to manage load and unload (charge/discharge) of Solarbank
 - Publish status to MQTT service
